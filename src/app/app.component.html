@@ -4,10 +4,13 @@
     <label for="user-input">
       User Input
     </label>
-    <input id="name" type="text" formControlName="user_input">
+    <input id="name" type="text" formControlName="user_input" size="150">
   </div>
 
-  <button class="button" type="submit">Send</button>
+  <br>
+  <button class="button" (click)="setUnsafeFlag()" type="submit">Send without sanitizing</button>
+  <br>
+  <button class="button" (click)="setSafeFlag()" type="submit">Send and sanitize</button>
 
 </form>
 
@@ -15,4 +18,4 @@
 <br>
 
 <p>Server received:</p>
-<p [innerHTML]="getUnsafeResult()"></p>
+<p [innerHTML]="getResult()"></p>
